@@ -11,12 +11,42 @@ export const Marshrut = () => {
 
     const addPoint1 = () => {
         const ref = createRef()
-        setPoints1([...points1 , <input className='ket_input' type="number" ref={ref} />, <br/>])
+        setPoints1([...points1 , <input className='input' type="number" ref={ref} />])
     }
 
     const addPoint2 = () => {
         const ref = createRef()
-        setPoints2([...points2 , <input type="number"  className='ket_input' ref={ref} />, <br/>])
+        setPoints2([...points2 , <input type="number"  className='input' ref={ref} />])
+    }
+
+    const handleSubmit = () => {
+        const gamma1 = points1.map((value) => {
+            
+            return +value.ref?.current.value
+        })
+        const gamma2 = points2.map((value) => {
+            return +value.ref?.current.value
+        })
+
+        const body = JSON.stringify({
+            vehicaleId: selectedVehicale,
+            gamma1,
+            gamma2
+        })
+
+        fetch(`${process.env.REACT_APP_API_BASE_URL}/compare-route`  , {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body
+        })    
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            setResult(data)
+        })
+        .catch(() => setResult([]))
     }
 
     return <div className="marshrut_div">
@@ -34,28 +64,6 @@ export const Marshrut = () => {
                 <Point text="Շրջանաձև" points={points2} setPoints1={setPoints2}/>
             </div>
         </div>
-        <button className="submit btn btn-success" onClick={() => {
-            const gamma1 = points1.map((value) => {
-                console.log(value)
-                return +value.ref.current.value
-            })
-            const gamma2 = points2.map((value) => {
-                return +value.ref.current.value
-            })
-
-            fetch("http://localhost:5000/compare-route"  , {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                vehicaleId: selectedVehicale,
-                gamma1,
-                gamma2
-            })
-            })    
-            .then(response => response.json())
-            .then(data => console.log(data))
-        }}>Հաստատել</button>
+        <button className="submit btn btn-success" onClick={() => handleSubmit()}>Հաստատել</button>
     </div>
 }
