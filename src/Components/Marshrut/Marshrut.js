@@ -66,10 +66,10 @@ export const Marshrut = () => {
         </div>
         <button className="submit btn btn-success" onClick={() => handleSubmit()}>Հաստատել</button>
         {
-            result.length === 2 && <p>հավասարի դեպք</p>
+            result.length === 2 && <p>Տվյալ դեպքում տարբերություն չկա, թե որ երթուղին կընտրենք</p>
         }
         {
-            result.length === 1 && <p>{result[0].dataValues.brand} {result[0].value}</p>
+            result.length === 1 && <p>{`Տվյալ դեպքում հարմար է օգտվել ${result[0].dataValues.brand} ${result[0].type} երթուղուց։`}</p>
         }
     </div>
 }

@@ -59,10 +59,10 @@ export const Gruz = () => {
         </div>
         <button className="submit submitBTN" onClick={() => handleSubmit()}>Հաստատել</button>
         {
-          result.length === 1 ? <p className="result_text">{`Հետևյալ դեպքում ավելի հարմար է օգտվել ${result[0].value} քաշ տեղափոխող ${result[0].dataValues.brand} տրանսպորտի տեսակից`}</p> : null
+          result.length === 1 ? <p className="result_text">{`Հետևյալ դեպքում ավելի հարմար է օգտվել ${result[0].value} տոննա քաշ տեղափոխող ${result[0].dataValues.brand} տրանսպորտի տեսակից`}</p> : null
         }
         {
-          result.length === 2 ? <p>{`Հետևյալ դեպքում հարմար է օգտագործել և առաջին, և երկրորդ տեսակները`}</p> : null
+          result.length === 2 ? <p>{`Հետևյալ դեպքում հարմար է օգտագործել և առաջին, և երկրորդ տեսակները։`}</p> : null
         }
       </div>
     </>

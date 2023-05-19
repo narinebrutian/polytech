@@ -35,10 +35,10 @@ export const Daily = () => {
             <button className="daily_submit btn btn-success" onClick={() => handleSubmit()}>Հաստատել</button>
         </div>
         {
-            result?.value?.length === 1 ? <p>{`Տվյալ դեպքում ավելի հարմար է օգտվել ${result?.vehicale.brand} տեսակի ${result?.value} տոննա ծանրաբեռնվածությամբ մեքեայից ${result?.type} երթուղով`}</p> : null
+            result?.value?.length === 1 ? <p>{`Տվյալ դեպքում ավելի հարմար է օգտվել ${result?.vehicale.brand} տեսակի ${result?.value} տոննա քաշ տեղափոխող մեքենայից ${result?.type} երթուղով։`}</p> : null
         }
         {
-            result?.value?.length === 2 ? <p>{`Տվյալ դեպքում տարբերություն չկա թե որ մարշրուտը կընտնրենք`}</p> : null
+            result?.value?.length === 2 ? <p>{`Տվյալ դեպքում տարբերություն չկա, թե որ մարշրուտը կընտնրենք։`}</p> : null
         }
     </div>
 }
