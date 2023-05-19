@@ -7,7 +7,7 @@ export const Marshrut = () => {
     const [points1 , setPoints1] = useState([])
     const [points2 , setPoints2] = useState([])
 
-    const [result , setResult] = useState()
+    const [result , setResult] = useState([])
 
     const addPoint1 = () => {
         const ref = createRef()
@@ -65,5 +65,11 @@ export const Marshrut = () => {
             </div>
         </div>
         <button className="submit btn btn-success" onClick={() => handleSubmit()}>Հաստատել</button>
+        {
+            result.length === 2 && <p>հավասարի դեպք</p>
+        }
+        {
+            result.length === 1 && <p>{result[0].dataValues.brand} {result[0].value}</p>
+        }
     </div>
 }
