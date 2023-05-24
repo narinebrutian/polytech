@@ -9,7 +9,7 @@ export const Vehicale = ({setSelectedVehicale , text , name}) => {
       .then(data => {
         setVehicales(data)
       })
-      .catch(() => {
+      .catch((e) => {
         setVehicales([])
       })
     } ,[])
@@ -20,7 +20,7 @@ export const Vehicale = ({setSelectedVehicale , text , name}) => {
               {
                 vehicales.length > 0 ?vehicales?.map((value) => {
                   return <li className="car_list">
-                    <input className="input_list" id={`${name}${value.id}`} type="radio" name={name} onChange={(e) => setSelectedVehicale(value.id)}/>
+                    <input className="input_list" id={`${name}${value.id}`} type="radio" name="vehicale" onChange={(e) => setSelectedVehicale(value.id)}/>
                   
                     <label for={`${name}${value.id}`}>{value.brand}/{value.phi}</label>
                     </li>

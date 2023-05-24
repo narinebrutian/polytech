@@ -49,20 +49,20 @@ export const Gruz = () => {
     return <>
       <div className="wrapper">
         <div className="gruz_vehicales">
-          <Vehicale setSelectedVehicale={setSelectedVehicale1} text={"Առաջին տրանսպորտային միջոց"} name="brand1"/>
-          <Vehicale setSelectedVehicale={setSelectedVehicale2} text={"Երկրորդ տրանսպորտային միջոց"} name="brand2"/>
+          <Vehicale setSelectedVehicale={setSelectedVehicale1} text={"Առաջին շարժակազմ"} name="brand1"/>
+          <Vehicale setSelectedVehicale={setSelectedVehicale2} text={"Երկրորդ շարժակազմ"} name="brand2"/>
         </div>
-        <button onClick={() => handleAddPoint()} className="submit addBTN">Ավելացնել կետ</button>
+        <button onClick={() => handleAddPoint()} className="submit addBTN">Ավելացնել բեռնման բեռնաթափման կետ</button>
         <div className="gruz_points">
-          <Point points={points1} text="Առաջին տրանսպորտային միջոց"/>
-          <Point points={points2} text="Երկրորդ տրանսպորտային միջոց"/>
+          <Point points={points1} text="Առաջին շարժակազմ"/>
+          <Point points={points2} text="Երկրորդ շարժակազմ"/>
         </div>
         <button className="submit submitBTN" onClick={() => handleSubmit()}>Հաստատել</button>
         {
-          result.length === 1 ? <p className="result_text">{`Հետևյալ դեպքում ավելի հարմար է օգտվել ${result[0].value} տոննա քաշ տեղափոխող ${result[0].dataValues.brand} տրանսպորտի տեսակից`}</p> : null
+          result.length === 1 ? <p className="result_text">{`Հետևյալ դեպքում ավելի հարմար է օգտվել ${result[0].value} տոննա քաշ տեղափոխող ${result[0].dataValues.brand} շարժակազմից։`}</p> : null
         }
         {
-          result.length === 2 ? <p>{`Հետևյալ դեպքում հարմար է օգտագործել և առաջին, և երկրորդ տեսակները։`}</p> : null
+          result.length === 2 ? <p>{`Հետևյալ դեպքում հարմար է օգտագործել և առաջին, և երկրորդ շարժակազմերը։`}</p> : null
         }
       </div>
     </>

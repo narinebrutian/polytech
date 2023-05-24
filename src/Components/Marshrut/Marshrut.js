@@ -54,14 +54,14 @@ export const Marshrut = () => {
         <hr/>
         <div className="points_div">
             <div>
-                <button onClick={() => addPoint1()} className="submit btn btn-primary addMarshKet">Ավելացնել Կետ</button>
+                <button onClick={() => addPoint1()} className="submit btn btn-primary addMarshKet">Ավելացնել բեռնման բեռնաթափման կետ</button>
                 <br/>   
-                <Point text="Ճոճանակային" points={points1} setPoints1={setPoints1}/>  
+                <Point text="Ճոճանակավոր" points={points1} setPoints1={setPoints1}/>  
                 <br/>    
             </div>
             <div>
-                <button onClick={() => addPoint2()} className="submit btn btn-primary addMarshKet">Ավելացնել Կետ</button>
-                <Point text="Շրջանաձև" points={points2} setPoints1={setPoints2}/>
+                <button onClick={() => addPoint2()} className="submit btn btn-primary addMarshKet">Ավելացնել բեռնման բեռնաթափման կետ</button>
+                <Point text="Օղակաձև" points={points2} setPoints1={setPoints2}/>
             </div>
         </div>
         <button className="submit btn btn-success" onClick={() => handleSubmit()}>Հաստատել</button>
